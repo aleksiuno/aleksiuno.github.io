@@ -1,0 +1,80 @@
+body {
+  font-family: 'Montserrat';
+}
+
+.fill {
+  min-height: 100vh!important;
+}
+
+.roundbox {
+  max-width: 300px;
+  background-color: rgb(47,47,47);
+  color: rgb(255,255,255);
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border: 2px solid rgb(47,47,47);
+  border-radius: 10px;
+}
+
+#progressdark {
+  min-width: 270px;
+}
+
+p.skill {
+  font-size: 18px;
+}
+
+.portfolioimage {
+  min-width: 270px;
+}
+
+.icobox {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn.btn-primary {
+  background-color: rgb(120,120,120);
+  border-color: rgb(120,120,120);
+}
+
+.btn.btn-primary:hover {
+  background-color: black;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: rgba(0,0,0,0.25);
+  outline: 0;
+  box-shadow: 0 0 0 .2rem rgba(0,0,0,0.25);
+}
+
+.placeholder {
+  width: 85%;
+  margin: auto;
+}
+
+a {
+  color: rgb(120,120,120);
+}
+
+a:hover {
+  color: black;
+}
+
+.grayscale {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.grayscale:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.nav-link {
+  padding: 8px!important;
+  font-size: 14px!important;
+}
