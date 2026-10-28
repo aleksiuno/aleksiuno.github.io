@@ -1,922 +1,289 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Darius Aleksiūnas — Backend Developer (PHP, Symfony, Ecommerce)</title>
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      name="description"
+      content="Darius Aleksiūnas, backend developer in Kaunas, Lithuania. 7 years building and running production ecommerce platforms with PHP, Symfony, PrestaShop, ERP and payment integrations. Expanding into Go."
     />
-    <title>Darius Aleksiunas</title>
-    <link rel="shortcut icon" type="image/png" href="assets/img/favico.png" />
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
-    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Montserrat"
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121316" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://aleksiuno.github.io/" />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/img/favico.png" type="image/png" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Darius Aleksiūnas — Backend Developer" />
+    <meta
+      property="og:description"
+      content="Backend Developer — PHP, Symfony, Ecommerce Platforms. 7 years of production ecommerce work. Kaunas, Lithuania."
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <meta property="og:url" content="https://aleksiuno.github.io/" />
+    <meta property="profile:first_name" content="Darius" />
+    <meta property="profile:last_name" content="Aleksiūnas" />
+    <meta name="twitter:card" content="summary" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Darius Aleksiūnas",
+        "jobTitle": "Backend Developer",
+        "description": "Backend Developer — PHP, Symfony, Ecommerce Platforms",
+        "url": "https://aleksiuno.github.io/",
+        "email": "mailto:aleksiuno@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kaunas",
+          "addressCountry": "LT"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "The Open University"
+        },
+        "knowsAbout": ["PHP", "Symfony", "Doctrine ORM", "PrestaShop", "MySQL", "MongoDB", "Docker", "Go"],
+        "knowsLanguage": ["lt", "en", "ru"],
+        "sameAs": [
+          "https://lt.linkedin.com/in/darius-aleksiunas",
+          "https://github.com/aleksiuno"
+        ]
+      }
+    </script>
   </head>
 
-  <body style="background-color: #e9ecef;">
-    <nav
-      class="navbar navbar-light navbar-expand-md navigation-clean fixed-top"
-      id="mainNav"
-      style="background-color: rgb(47, 47, 47);"
-    >
-      <div class="container">
-        <a
-          class="navbar-brand"
-          href="#header"
-          data-bs-hover-animate="pulse"
-          style="color: rgb(255, 255, 255);"
-        >
-          Aleksiuno
-        </a>
-        <button
-          class="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navcol-1"
-        >
-          <span class="sr-only">Toggle navigation</span>
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navcol-1">
-          <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" href="#aboutme" data-bs-hover-animate="pulse">
-                About Me
-              </a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" href="#skills" data-bs-hover-animate="pulse">
-                Skills
-              </a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a
-                class="nav-link"
-                href="#showcase"
-                data-bs-hover-animate="pulse"
-              >
-                Portfolio
-              </a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" href="#contact" data-bs-hover-animate="pulse">
-                Contact
-              </a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a
-                class="nav-link pulse animated infinite btn btn-primary"
-                href="CVDariusAleksiunas.pdf"
-                target="_blank"
-                style="color: rgb(255, 255, 255);"
-              >
-                <i class="fa fa-download"></i>
-                &nbsp;Download CV
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <header
-      id="header"
-      class="d-flex justify-content-center fill"
-      style="background-color: #ffffff; color: rgb(0, 0, 0); margin-top: 60px;"
-    >
-      <div
-        class="jumbotron text-center align-content-center"
-        style="background-color: rgba(233, 236, 239, 0); margin: auto;"
-      >
-        <img
-          class="rounded-circle mb-5"
-          src="assets/img/Me.jpg"
-          style="
-						background-image: url('assets/img/Me.jpg');
-						width: 300px;
-						height: 300px;
-					"
-        />
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="hero">
+      <div class="wrap">
         <h1>Darius Aleksiūnas</h1>
-        <p>PHP/JS Full-Stack Developer</p>
-        <p></p>
-        <a
-          class="btn btn-primary"
-          role="button"
-          href="#aboutme"
-          data-bs-hover-animate="tada"
-        >
-          More..
-        </a>
+        <p class="title">Backend Developer — PHP, Symfony, Ecommerce Platforms</p>
+        <p class="lede">
+          7 years building, integrating and running production ecommerce platforms at Invertus,
+          now open to backend roles and expanding into Go.
+        </p>
+        <p class="location">Kaunas, Lithuania · remote or Kaunas on-site</p>
+        <ul class="actions">
+          <li>
+            <a class="btn btn-primary" href="Darius-Aleksiunas-CV.pdf" download>Download CV (PDF)</a>
+          </li>
+          <li><a class="btn" href="https://github.com/aleksiuno">GitHub</a></li>
+          <li><a class="btn" href="https://lt.linkedin.com/in/darius-aleksiunas">LinkedIn</a></li>
+        </ul>
       </div>
     </header>
-    <section id="aboutme" class="d-flex justify-content-center fill">
-      <div class="jumbotron text-center align-content-center placeholder">
-        <div class="roundbox">
-          <h1 style="margin: auto;" class="roundbox">ABOUT ME</h1>
-        </div>
-        <div class="d-flex features-icons-icon icobox">
-          <i
-            class="icon-user m-auto"
-            data-bs-hover-animate="pulse"
-            style="font-size: 50px;"
-          ></i>
-        </div>
-        <p class="text-center">
-          I had spent a long time in the UK, where I've got a bachelor's degree in IT. I have been
-          interested in IT technologies since my childhood, and have mastered some
-          programming languages since then. I am an enthusiast of computer games and
-          game development. I’m constantly expanding knowledge in the field of
-          programming.
+
+    <main id="main" class="wrap">
+      <section aria-labelledby="summary">
+        <h2 id="summary">Summary</h2>
+        <p>
+          Backend developer with 7 years of commercial ecommerce experience (2019–2026), all at a
+          specialist ecommerce agency. Built and shipped complete online stores from the ground up —
+          architecture, custom modules, ERP and payment integrations, data migration, deployment and
+          production maintenance — and owned client relationships end to end. Worked across PrestaShop,
+          WooCommerce, Sylius and a microservice-based B2B marketplace (Lumen, MongoDB, Docker, React),
+          on PHP 5.6 through 8.4 with Symfony, MySQL and PHPUnit.
         </p>
-        <p></p>
-        <a
-          class="btn btn-primary pulse animated infinite"
-          role="button"
-          href="CVDariusAleksiunas.pdf"
-          target="_blank"
-        >
-          <i class="fa fa-download"></i>
-          &nbsp;Download CV
-        </a>
-      </div>
-    </section>
-    <section
-      id="skills"
-      class="d-flex justify-content-center fill"
-      style="background-color: #ffffff;"
-    >
-      <div
-        class="jumbotron text-center align-content-center"
-        style="
-					background-color: rgba(255, 255, 255, 0);
-					margin: auto;
-					width: 100%;
-				"
-      >
-        <div class="roundbox">
-          <h1 style="margin: auto;" class="roundbox">SKILLS</h1>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                <div class="d-flex features-icons-icon icobox">
-                  <i
-                    class="icon-screen-desktop m-auto"
-                    data-bs-hover-animate="pulse"
-                    style="font-size: 50px;"
-                  ></i>
-                </div>
-                <div class="roundbox">
-                  <h3 style="margin: 0px;" class="roundbox">IT Skills</h3>
-                  <div></div>
-                </div>
-                <div id="skill">
-                  <p class="lead mb-0 skill">PHP (Symfony)</p>
-                  <div id="progressdark" class="progress">
-                    <div class="progress-bar bg-dark" style="width: 60%;"></div>
-                  </div>
-                </div>
-                <div id="skill">
-                  <p class="lead mb-0 skill">HTML/CSS</p>
-                  <div id="progressdark" class="progress">
-                    <div class="progress-bar bg-dark" style="width: 50%;"></div>
-                  </div>
-                </div>
-                <div id="skill">
-                  <p class="lead mb-0 skill">Bootstrap</p>
-                  <div id="progressdark" class="progress">
-                    <div class="progress-bar bg-dark" style="width: 50%;"></div>
-                  </div>
-                </div>
-                <div id="skill">
-                  <p class="lead mb-0 skill">JS (React)</p>
-                  <div id="progressdark" class="progress">
-                    <div class="progress-bar bg-dark" style="width: 50%;"></div>
-                  </div>
-                </div>
-                <div id="skill">
-                  <p class="lead mb-0 skill">JQuery</p>
-                  <div id="progressdark" class="progress">
-                    <div class="progress-bar bg-dark" style="width: 50%;"></div>
-                  </div>
-                </div>
-                <div id="skill">
-                  <p class="lead mb-0 skill">MySQL</p>
-                  <div id="progressdark" class="progress">
-                    <div class="progress-bar bg-dark" style="width: 50%;"></div>
-                  </div>
-                </div>
-                <div id="skill">
-                  <p class="lead mb-0 skill">Git</p>
-                  <div id="progressdark" class="progress">
-                    <div class="progress-bar bg-dark" style="width: 50%;"></div>
-                  </div>
-                </div>
-                <div id="skill">
-                  <p class="lead mb-0 skill">Java</p>
-                  <div id="progressdark" class="progress">
-                    <div class="progress-bar bg-dark" style="width: 20%;"></div>
-                  </div>
-                </div>
-                <div id="skill">
-                  <p class="lead mb-0 skill">Android</p>
-                  <div id="progressdark" class="progress">
-                    <div class="progress-bar bg-dark" style="width: 20%;"></div>
-                  </div>
-                </div>
-                <div id="skill">
-                  <p class="lead mb-0 skill">C#</p>
-                  <div id="progressdark" class="progress">
-                    <div class="progress-bar bg-dark" style="width: 20%;"></div>
-                  </div>
-                </div>
-                <div id="skill">
-                  <p class="lead mb-0 skill">Python3</p>
-                  <div id="progressdark" class="progress">
-                    <div class="progress-bar bg-dark" style="width: 10%;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                <div class="d-flex features-icons-icon icobox">
-                  <i
-                    class="icon-note m-auto"
-                    data-bs-hover-animate="pulse"
-                    style="font-size: 50px;"
-                  ></i>
-                </div>
-                <div class="roundbox">
-                  <h3 style="margin: 0px;" class="roundbox">Design skills</h3>
-                </div>
-              </div>
-              <div id="skill">
-                <p class="lead mb-0 skill">Gravit Designer</p>
-                <div id="progressdark" class="progress">
-                  <div class="progress-bar bg-dark" style="width: 100%;"></div>
-                </div>
-              </div>
-              <div id="skill">
-                <p class="lead mb-0 skill">Inkscape</p>
-                <div id="progressdark" class="progress">
-                  <div class="progress-bar bg-dark" style="width: 100%;"></div>
-                </div>
-              </div>
-              <div id="skill">
-                <p class="lead mb-0 skill">Blender</p>
-                <div id="progressdark" class="progress">
-                  <div class="progress-bar bg-dark" style="width: 60%;"></div>
-                </div>
-              </div>
-              <div id="skill">
-                <p class="lead mb-0 skill">Photoshop</p>
-                <div id="progressdark" class="progress">
-                  <div class="progress-bar bg-dark" style="width: 30%;"></div>
-                </div>
-              </div>
-              <div id="skill">
-                <p class="lead mb-0 skill">Illustrator</p>
-                <div id="progressdark" class="progress">
-                  <div class="progress-bar bg-dark" style="width: 15%;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                <div class="d-flex features-icons-icon icobox">
-                  <i
-                    class="icon-eyeglass m-auto"
-                    data-bs-hover-animate="pulse"
-                    style="font-size: 50px;"
-                  ></i>
-                </div>
-                <div class="roundbox">
-                  <h3 style="margin: 0px;" class="roundbox">Languages</h3>
-                </div>
-              </div>
-              <div id="skill">
-                <p class="lead mb-0 skill">Lithuanian</p>
-                <div id="progressdark" class="progress">
-                  <div class="progress-bar bg-dark" style="width: 100%;"></div>
-                </div>
-              </div>
-              <div id="skill">
-                <p class="lead mb-0 skill">English</p>
-                <div id="progressdark" class="progress">
-                  <div class="progress-bar bg-dark" style="width: 90%;"></div>
-                </div>
-              </div>
-              <div id="skill">
-                <p class="lead mb-0 skill">Russian</p>
-                <div id="progressdark" class="progress">
-                  <div class="progress-bar bg-dark" style="width: 30%;"></div>
-                </div>
-              </div>
-            </div>
+        <p>
+          Contributed to official PrestaShop payment modules for Kustom, Klarna and Mollie. Comfortable
+          leading delivery with junior developers, running code reviews, automating repetitive
+          engineering work and handling security audits. Expanding into Go as a second backend
+          language, building Go services alongside the PHP work.
+        </p>
+      </section>
+
+      <section aria-labelledby="experience">
+        <h2 id="experience">Experience</h2>
+
+        <article class="role">
+          <h3>Developer <span class="org">— Invertus, Kaunas (ecommerce agency)</span></h3>
+          <p class="dates">
+            <time datetime="2022-08">August 2022</time> – <time datetime="2026-05">May 2026</time>
+          </p>
+          <ul>
+            <li>
+              Owned full-cycle delivery of new PrestaShop stores for clients replacing outdated
+              platforms (Fantasmagoria, Brasa): requirements with the client, architecture, custom
+              module development, data migration (customers, products, orders), go-live and
+              post-launch maintenance.
+            </li>
+            <li>
+              Built the Brasa integration with Microsoft Dynamics 365 Business Central (Navision) as
+              the system of record: two-way sync of products, stock, orders and customer data between
+              the ERP and the store.
+            </li>
+            <li>
+              Deployed and operated Brasa in production on Hostinger cloud with Cloudflare in front;
+              handled hosting, DNS, caching and ongoing maintenance.
+            </li>
+            <li>
+              Developed and maintained official PrestaShop payment integration modules: Kustom
+              (Klarna-style buy-now-pay-later), plus contributions to the Klarna and Mollie modules.
+            </li>
+            <li>
+              Backend developer on Stockfiller, a Scandinavian B2B marketplace connecting large product
+              suppliers with retailers, during its migration off PrestaShop to a microservice
+              architecture: Lumen (Laravel) services communicating over REST, MongoDB, Docker for dev
+              and production, with separate React front-offices per domain (customer management,
+              product management).
+            </li>
+            <li>
+              Migrated PrestaShop legacy core code to the Symfony/Doctrine layer using its CQRS
+              architecture (command and query buses, handlers, domain layer), with unit and integration
+              test coverage for the migrated code; delivered smaller client projects including the
+              Camelia Vaistinė pharmacy e-shop and the Kauno Grūdai questionnaire tool.
+            </li>
+            <li>
+              Built an agentic delivery pipeline with Claude Code and MCP: it monitored the client's
+              Trello board, implemented clear tasks with tests, ran browser-level checks against the app
+              in Docker, deployed to the dev environment and updated Trello, Jira and Tempo work logs;
+              unclear tasks became Jira questions for me to groom with the client. Replaced most of the
+              manual triage, bookkeeping and deployment steps in the client workflow.
+            </li>
+            <li>
+              Led delivery with junior developers on my projects, ran code reviews and gave internal
+              tech presentations.
+            </li>
+            <li>
+              Performed security audits of checkout and payment flows (payment-skimmer detection,
+              CORS/Cloudflare issues, SQL configuration, Apple Pay routing).
+            </li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <h3>Junior PHP Developer <span class="org">— Invertus, Kaunas</span></h3>
+          <p class="dates">
+            <time datetime="2019-03">March 2019</time> – <time datetime="2022-08">August 2022</time>
+          </p>
+          <ul>
+            <li>
+              Developed PrestaShop modules sold as Invertus products (e.g. smart upsell module) and
+              custom modules for client stores.
+            </li>
+            <li>
+              Communicated directly with clients and built integrations for them; staffed on client
+              projects at mid-level from early on.
+            </li>
+            <li>Contributed to large team projects such as the Camelia Vaistinė e-shop.</li>
+            <li>
+              Worked across PrestaShop 1.6 and 1.7, PHP 5.6–7.x, MySQL, JavaScript/jQuery; wrote PHPUnit
+              tests and took part in code reviews.
+            </li>
+            <li>Worked with WooCommerce and Sylius on client and internal projects.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section aria-labelledby="skills">
+        <h2 id="skills">Skills</h2>
+        <dl class="skills">
+          <div>
+            <dt>Backend</dt>
+            <dd>
+              PHP 5.6–8.4, Symfony, Doctrine ORM, Lumen/Laravel, OOP and design patterns, CQRS, REST
+              APIs, microservice architecture, PHPUnit (unit and integration tests)
+            </dd>
           </div>
-        </div>
-      </div>
-    </section>
-    <section
-      id="showcase"
-      class="d-flex justify-content-center fill"
-      style="background-color: #ffffff;"
-    >
-      <div
-        class="jumbotron text-center align-content-center"
-        style="background-color: rgb(233, 236, 239); margin: auto; width: 100%;"
-      >
-        <div class="roundbox">
-          <h1 style="margin: auto;" class="roundbox">PORTFOLIO</h1>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                <div class="d-flex features-icons-icon icobox">
-                  <i
-                    class="icon-picture m-auto"
-                    data-bs-hover-animate="pulse"
-                    style="font-size: 50px;"
-                  ></i>
-                </div>
-                <div class="roundbox">
-                  <h3 style="margin: 0px;" class="roundbox">Front-End</h3>
-                </div>
-              </div>
-              <div id="portfolioentry" class="mb-2">
-                <a href="#portfolio-modal-1" data-toggle="modal">
-                  <img
-                    src="assets/img/PerfectInteriors.jpg"
-                    class="pulse animated infinite img-fluid portfolioimage grayscale"
-                  />
-                </a>
-              </div>
-              <div id="portfolioentry" class="mb-2">
-                <a href="#portfolio-modal-2" data-toggle="modal">
-                  <img
-                    src="assets/img/Ekodaila.jpg"
-                    class="pulse animated infinite img-fluid portfolioimage grayscale"
-                  />
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                <div class="d-flex features-icons-icon icobox">
-                  <i
-                    class="icon-layers m-auto"
-                    data-bs-hover-animate="pulse"
-                    style="font-size: 50px;"
-                  ></i>
-                </div>
-                <div class="roundbox">
-                  <h3 style="margin: 0;" class="roundbox">Full-Stack</h3>
-                </div>
-              </div>
-              <div id="portfolioentry" class="mb-2">
-                <a href="#portfolio-modal-3" data-toggle="modal">
-                  <img
-                    src="assets/img/TutorialDatabase.jpg"
-                    class="pulse animated infinite img-fluid portfolioimage grayscale"
-                  />
-                </a>
-              </div>
-              <div id="portfolioentry" class="mb-2">
-                <a href="#portfolio-modal-4" data-toggle="modal">
-                  <img
-                    src="assets/img/Portfolio.jpg"
-                    class="pulse animated infinite img-fluid portfolioimage grayscale"
-                  />
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                <div class="d-flex features-icons-icon icobox">
-                  <i
-                    class="icon-ghost m-auto"
-                    data-bs-hover-animate="pulse"
-                    style="font-size: 50px;"
-                  ></i>
-                </div>
-                <div class="roundbox">
-                  <h3 style="margin: 0;" class="roundbox">Games</h3>
-                </div>
-              </div>
-              <div id="portfolioentry" class="mb-2">
-                <a href="#portfolio-modal-5" data-toggle="modal">
-                  <img
-                    src="assets/img/PongScreen.jpg"
-                    class="pulse animated infinite img-fluid portfolioimage grayscale"
-                  />
-                </a>
-              </div>
-              <div id="portfolioentry" class="mb-2">
-                <a href="#portfolio-modal-6" data-toggle="modal">
-                  <img
-                    src="assets/img/TicTacToeScreen.jpg"
-                    class="pulse animated infinite img-fluid portfolioimage grayscale"
-                  />
-                </a>
-              </div>
-            </div>
+          <div>
+            <dt>Ecommerce platforms</dt>
+            <dd>
+              PrestaShop 1.6–9 (modules, hooks, core migration to Symfony), WooCommerce, Sylius, custom
+              B2B marketplace
+            </dd>
           </div>
-        </div>
-      </div>
-    </section>
-    <section
-      id="contact"
-      class="d-flex justify-content-center fill"
-      style="background-color: #ffffff;"
-    >
-      <div
-        class="jumbotron text-center align-content-center"
-        style="
-					background-color: rgba(255, 255, 255, 0);
-					margin: auto;
-					width: 100%;
-				"
-      >
-        <div class="roundbox">
-          <h1 style="margin: auto;" class="roundbox">CONTACTS</h1>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="placeholder">
-                <div>
-                  <a href="tel:+37064871141">
-                    <i
-                      class="fa fa-phone-square pulse animated infinite"
-                      style="font-size: 40px; padding: 10px;"
-                    ></i>
-                  </a>
-                  <p class="lead text-center" style="font-size: 20px;">
-                    &nbsp; +37064871141
-                  </p>
-                </div>
-                <div>
-                  <a href="mailto:aleksiuno@gmail.com">
-                    <i
-                      class="fa fa-envelope-square pulse animated infinite"
-                      style="font-size: 40px; padding: 10px;"
-                    ></i>
-                  </a>
-                  <p class="lead text-center" style="font-size: 20px;">
-                    &nbsp; aleksiuno@gmail.com
-                  </p>
-                </div>
-                <div
-                  class="d-flex justify-content-center justify-content-lg-center"
-                >
-                  <p class="text-left">
-                    <a href="https://www.facebook.com/darius.aleksiunas" target="_blank">
-                      <i
-                        class="fa fa-facebook-square pulse animated infinite"
-                        style="font-size: 40px; padding: 10px;"
-                      ></i>
-                    </a>
-                  </p>
-                  <p class="text-left">
-                    <a href="https://www.linkedin.com/in/darius-aleksiunas/" target="_blank">
-                      <i
-                        class="fa fa-linkedin-square pulse animated infinite"
-                        style="font-size: 40px; padding: 10px;"
-                      ></i>
-                    </a>
-                  </p>
-                  <p class="text-left">
-                    <a href="https://github.com/aleksiuno/" target="_blank">
-                      <i
-                        class="fa fa-github pulse animated infinite"
-                        style="font-size: 40px; padding: 10px;"
-                      ></i>
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div>
+            <dt>Integrations</dt>
+            <dd>
+              Payment gateways (Kustom, Klarna, Mollie), Microsoft Dynamics 365 Business Central /
+              Navision ERP, third-party APIs, data migrations
+            </dd>
           </div>
-        </div>
-      </div>
-    </section>
-    <footer
-      class="py-4 text-center text-white"
-      style="background-color: #2f2f2f;"
-    >
-      <div class="container">
-        <small style="color: rgb(255, 255, 255);">
-          Copyright ©&nbsp;aleksiuno.github.io 2020
-        </small>
-      </div>
-    </footer>
-    <div
-      class="modal text-center"
-      role="dialog"
-      tabindex="-1"
-      id="portfolio-modal-1"
-    >
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
+          <div>
+            <dt>Data</dt>
+            <dd>MySQL, MongoDB</dd>
           </div>
-          <div class="modal-body">
-            <div class="container text-center">
-              <div class="row">
-                <div class="col-lg-8 mx-auto">
-                  <h2 class="text-uppercase text-secondary mb-0">
-                    Perfect Interiors
-                  </h2>
-                  <hr class="star-dark mb-3" />
-                  <img
-                    class="img-fluid mb-3"
-                    src="assets/img/PerfectInteriors.jpg"
-                  />
-                  <p class="text-left">
-                    This project from start to finish was made by me. Sadly the
-                    company doesn’t exist anymore. If you want to check the
-                    webpage press the button below.
-                    <br />
-                    <br />
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    Tasks done:
-                    <br />
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    1. Requirement analysis
-                  </p>
-                  <p class="text-left" style="margin: 0px;">2. UX design</p>
-                  <p class="text-left" style="margin: 0px;">
-                    3. Logo design and creation
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    4. Website implementation (using HTML/CSS/JS Bootstrap)
-                  </p>
-                  <p class="text-left" style="margin: 0px;">5. Text creation</p>
-                  <p class="text-left" style="margin: 0px;">6. Deployment</p>
-                  <a
-                    class="btn btn-primary pulse animated infinite mt-2"
-                    role="button"
-                    href="PerfectInteriors"
-                    target="_blank"
-                  >
-                    <i class="fa fa-eye"></i>
-                    &nbsp;Check Website
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div>
+            <dt>DevOps</dt>
+            <dd>Docker, Git, CI/CD, Linux, Hostinger cloud deployment, Cloudflare</dd>
           </div>
-          <div class="modal-footer pb-3"></div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal text-center"
-      role="dialog"
-      tabindex="-1"
-      id="portfolio-modal-2"
-    >
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
+          <div>
+            <dt>Frontend</dt>
+            <dd>JavaScript, React, HTML/CSS, Bootstrap, jQuery</dd>
           </div>
-          <div class="modal-body">
-            <div class="container text-center">
-              <div class="row">
-                <div class="col-lg-8 mx-auto">
-                  <h2 class="text-uppercase text-secondary mb-0">Ekodaila</h2>
-                  <hr class="star-dark mb-3" />
-                  <img class="img-fluid mb-3" src="assets/img/Ekodaila.jpg" />
-                  <p class="text-left">
-                    This project from start to finish (except logo design) was
-                    made by me. Sadly the company doesn’t exist anymore. If you
-                    want to check the webpage press the button below.
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    Tasks done:
-                    <br />
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    1. Requirement analysis
-                  </p>
-                  <p class="text-left" style="margin: 0px;">2. UX design</p>
-                  <p class="text-left" style="margin: 0px;">
-                    3. Website implementation (using HTML/CSS/JS Bootstrap)
-                  </p>
-                  <p class="text-left" style="margin: 0px;">4. Text creation</p>
-                  <p class="text-left" style="margin: 0px;">5. Deployment</p>
-                  <a
-                    class="btn btn-primary pulse animated infinite mt-2"
-                    role="button"
-                    href="Ekodaila"
-                    target="_blank"
-                  >
-                    <i class="fa fa-eye"></i>
-                    &nbsp;Check Website
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div>
+            <dt>Security</dt>
+            <dd>Security audits, payment-skimmer detection, CORS/CDN hardening</dd>
           </div>
-          <div class="modal-footer pb-3"></div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal text-center"
-      role="dialog"
-      tabindex="-1"
-      id="portfolio-modal-3"
-    >
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
+          <div>
+            <dt>AI &amp; automation</dt>
+            <dd>
+              Agentic development workflows (Claude Code, MCP), prompt engineering, automated delivery
+              and content pipelines
+            </dd>
           </div>
-          <div class="modal-body">
-            <div class="container text-center">
-              <div class="row">
-                <div class="col-lg-8 mx-auto">
-                  <h2 class="text-uppercase text-secondary">
-                    Graduation Project
-                  </h2>
-                  <hr class="star-dark mb-3" />
-                  <img
-                    class="img-fluid mb-3"
-                    src="assets/img/TutorialDatabase.jpg"
-                  />
-                  <p class="text-left">
-                    This application project was the base for my graduation
-                    paper. Project idea was to create database of tutorials that
-                    would help users to sort best suitable tutorial entries. If
-                    source code is needed, contact me. You can check the webpage
-                    by clicking the button bellow.
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    Tasks done:
-                    <br />
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    1. Requirement analysis
-                  </p>
-                  <p class="text-left" style="margin: 0px;">2. UX design</p>
-                  <p class="text-left" style="margin: 0px;">3. UI design</p>
-                  <p class="text-left" style="margin: 0px;">
-                    4. Website implementation (using HTML/CSS/JS, Bootstrap,
-                    JQuery, PHP)
-                  </p>
-                  <p class="text-left" style="margin: 0px;">5. Text creation</p>
-                  <p class="text-left" style="margin: 0px;">
-                    6. Project analysis
-                  </p>
-                  <a
-                    class="btn btn-primary mt-2"
-                    role="button"
-                    href="#contact"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    &nbsp;Ask for source-code
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div>
+            <dt>Ways of working</dt>
+            <dd>
+              Agile/Jira, code review, client communication and requirements gathering, mentoring
+              juniors, estimations
+            </dd>
           </div>
-          <div class="modal-footer pb-3"></div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal text-center"
-      role="dialog"
-      tabindex="-1"
-      id="portfolio-modal-4"
-    >
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
+          <div>
+            <dt>Learning</dt>
+            <dd>Go (side projects, actively learning)</dd>
           </div>
-          <div class="modal-body">
-            <div class="container text-center">
-              <div class="row">
-                <div class="col-lg-8 mx-auto">
-                  <h2 class="text-uppercase text-secondary">
-                    aleksiuno.github.io Project
-                  </h2>
-                  <hr class="star-dark mb-3" />
-                  <img class="img-fluid mb-3" src="assets/img/Portfolio.jpg" />
-                  <p class="text-left">
-                    This portfolio website and CV project was all made by me. CV
-                    design was made to look similar to website UI design. CV
-                    design was made using “Gravit Designer” software. You can
-                    find CV download button below.
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    Tasks done:
-                    <br />
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    1. Requirement analysis
-                  </p>
-                  <p class="text-left" style="margin: 0px;">2. UI design</p>
-                  <p class="text-left" style="margin: 0px;">
-                    3. Website implementation (using HTML/CSS/JS, Bootstrap,
-                    JQuery, PHP)
-                  </p>
-                  <p class="text-left" style="margin: 0px;">4. Text creation</p>
-                  <a
-                    class="btn btn-primary pulse animated infinite mt-2"
-                    role="button"
-                    href="CVDariusAleksiunas.pdf"
-                    target="_blank"
-                  >
-                    <i class="fa fa-download"></i>
-                    &nbsp;Download CV
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer pb-3"></div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal text-center"
-      role="dialog"
-      tabindex="-1"
-      id="portfolio-modal-5"
-    >
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="container text-center">
-              <div class="row">
-                <div class="col-lg-8 mx-auto">
-                  <h2 class="text-uppercase text-secondary mb-0">Pong Game</h2>
-                  <hr class="star-dark mb-3" />
-                  <img class="img-fluid mb-3" src="assets/img/PongScreen.jpg" />
-                  <p class="text-left">
-                    This game project was my second full game project ever made.
-                    It was stored in “Google Play” but sadly it was removed
-                    because of title copyright violation. If source code is
-                    needed please contact me.
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    Tasks done:
-                    <br />
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    1. Requirement analysis
-                  </p>
-                  <p class="text-left" style="margin: 0px;">2. UI design</p>
-                  <p class="text-left" style="margin: 0px;">
-                    2. Game graphic asset creation
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    3. Game implementation (using Eclipse IDE, Java, libGDX
-                    framework)
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    4. Storing to the "Google Play"
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer pb-3"></div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal text-center"
-      role="dialog"
-      tabindex="-1"
-      id="portfolio-modal-6"
-    >
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="container text-center">
-              <div class="row">
-                <div class="col-lg-8 mx-auto">
-                  <h2 class="text-uppercase text-secondary mb-0">
-                    TicTacToe Game
-                  </h2>
-                  <hr class="star-dark mb-3" />
-                  <img
-                    class="img-fluid mb-3"
-                    src="assets/img/TicTacToeScreen.jpg"
-                  />
-                  <p class="text-left">
-                    This game project was first game project ever made by me. It
-                    was stored to “Google Play” and still available. If you want
-                    to check it please press the button bellow. If source code
-                    is needed please contact me.
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    Tasks done:
-                    <br />
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    1. Requirement analysis
-                  </p>
-                  <p class="text-left" style="margin: 0px;">2. UI design</p>
-                  <p class="text-left" style="margin: 0px;">
-                    2. Game graphic asset creation
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    3. Game implementation (using Eclipse IDE, Java, libGDX
-                    framework)
-                  </p>
-                  <p class="text-left" style="margin: 0px;">
-                    4. Storing to the "Google Play"
-                  </p>
-                  <a
-                    class="btn btn-primary pulse animated infinite mt-2"
-                    role="button"
-                    href="https://play.google.com/store/apps/developer?id=Darius+Aleksiunas&amp;hl=lt"
-                    target="_blank"
-                  >
-                    <i class="fa fa-eye"></i>
-                    &nbsp;Check Website
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer pb-3"></div>
-        </div>
-      </div>
-    </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/aleksiuno.js"></script>
-    <script src="assets/js/bs-animation.js"></script>
+        </dl>
+      </section>
+
+      <section aria-labelledby="projects">
+        <h2 id="projects">Side projects</h2>
+        <ul class="projects">
+          <li>
+            <a href="https://soltcoin.com"><strong>soltcoin.com</strong></a> — crypto education site
+            with a semi-automated AI content pipeline. Used as a personal test bed for new tooling:
+            Docker-based deployments, AI-assisted content generation, hosting and automation
+            experiments.
+          </li>
+          <li>
+            <strong>devtreasures.com</strong> (2024–2025, offline) — WooCommerce dropshipping store run
+            under my own company (Mažoji Bendrija); set up the store, payments, product sourcing and ad
+            campaigns, then closed it after a year when sales did not justify the costs.
+          </li>
+          <li>
+            <strong>Go practice</strong> — building small backend services in Go as a second language
+            alongside PHP, applying the service-boundary patterns from Stockfiller. Repos linked on
+            <a href="https://github.com/aleksiuno">GitHub</a> as they are completed.
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="education">
+        <h2 id="education">Education &amp; languages</h2>
+        <p>
+          <strong>BSc (Hons) Computing and IT (Computer Science)</strong> — The Open University, UK,
+          2012–2018
+        </p>
+        <p>Lithuanian (native) · English (C1, professional working proficiency) · Russian (basic)</p>
+      </section>
+
+      <section aria-labelledby="contact">
+        <h2 id="contact">Contact</h2>
+        <ul class="contact">
+          <li><span>Email</span> <a href="mailto:aleksiuno@gmail.com">aleksiuno@gmail.com</a></li>
+          <li>
+            <span>LinkedIn</span>
+            <a href="https://lt.linkedin.com/in/darius-aleksiunas">linkedin.com/in/darius-aleksiunas</a>
+          </li>
+          <li><span>GitHub</span> <a href="https://github.com/aleksiuno">github.com/aleksiuno</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="wrap">© 2026 Darius Aleksiūnas</footer>
   </body>
 </html>
