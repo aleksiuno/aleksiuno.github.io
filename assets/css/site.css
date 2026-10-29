@@ -5,7 +5,7 @@
  * variable weight) for display text, the system sans for body copy.
  * Class names are BEM-lite: block, block__element, block--modifier.
  * Sections: 1 custom properties, 2 dark mode, 3 reset and base, 4 layout,
- * 5 components, 6 utilities, 7 media queries.
+ * 5 components, 6 utilities, 7 media queries, 8 print.
  */
 
 /* 1. Custom properties (light) ------------------------------------------- */
@@ -21,6 +21,7 @@
   --accent: #b5400f;
   --accent-hover: #93330b;
   --accent-contrast: #fffdf9;
+  --accent-soft: rgb(181 64 15 / 0.12);
   --shadow: 0 1px 2px rgb(30 26 22 / 0.05), 0 10px 28px -14px rgb(30 26 22 / 0.22);
 
   --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
@@ -47,20 +48,24 @@
     --accent: #e27a45;
     --accent-hover: #ee9263;
     --accent-contrast: #1e1b18;
+    --accent-soft: rgb(226 122 69 / 0.18);
     --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 10px 28px -14px rgb(0 0 0 / 0.6);
   }
 }
 
 /* 3. Reset and base ------------------------------------------------------- */
 
+/* The two Google Fonts subsets. Their stock unicode-range lists both claim the
+   combining marks U+0304/0308/0329, and Fraunces composes "ū" from u + U+0304,
+   which then lands over the next letter ("Aleksiuñas"). Keeping the marks in
+   neither range lets the shaper find the precomposed glyph instead. */
 @font-face {
   font-family: "Fraunces";
   font-weight: 300 900;
   font-display: swap;
   src: url("../fonts/fraunces-latin-ext.woff2") format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308,
-    U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113,
-    U+2C60-2C7F, U+A720-A7FF;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF,
+    U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
@@ -68,8 +73,8 @@
   font-weight: 300 900;
   font-display: swap;
   src: url("../fonts/fraunces-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
-    U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 *,
@@ -151,8 +156,12 @@ a:focus-visible {
 
 .hero__grid {
   display: grid;
-  gap: 1.75rem;
+  gap: 2.5rem;
   padding-block: 2.5rem 3rem;
+}
+
+.hero__text {
+  max-width: 44rem;
 }
 
 .facts__list {
@@ -174,6 +183,30 @@ a:focus-visible {
 
 .skills {
   gap: 2rem;
+}
+
+/* Each item is a small grid: the rule and its dot live in a gutter column,
+   the dates and body sit beside it. No absolute positioning, so the gutter
+   can widen into a date column at 48em just by changing the template. */
+.timeline__item {
+  display: grid;
+  grid-template-columns: 1.75rem minmax(0, 1fr);
+  grid-template-areas:
+    "rule dates"
+    "rule body";
+  padding-bottom: 2.75rem;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__dates {
+  grid-area: dates;
+}
+
+.timeline__body {
+  grid-area: body;
 }
 
 .footer__inner {
@@ -243,13 +276,14 @@ a:focus-visible {
 }
 
 .nav__link {
+  display: inline-block;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink-muted);
   text-decoration: none;
-  padding-block: 0.25rem;
+  padding-block: 0.625rem;
   border-bottom: 2px solid transparent;
   transition: color 120ms ease, border-color 120ms ease;
 }
@@ -259,24 +293,7 @@ a:focus-visible {
   border-bottom-color: var(--accent);
 }
 
-/* Hero: duotone portrait (grey photo blended onto the accent) + big name */
-.hero__portrait {
-  width: min(12rem, 55%);
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  border-radius: 1rem 1rem 1rem 4rem;
-  background: var(--accent);
-  box-shadow: var(--shadow);
-}
-
-.hero__portrait img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 12%;
-  mix-blend-mode: luminosity;
-}
-
+/* Hero */
 .hero__eyebrow {
   display: flex;
   align-items: center;
@@ -314,12 +331,70 @@ a:focus-visible {
   color: var(--ink-muted);
 }
 
+/* On phones Download CV takes the whole first row and the two secondary
+   buttons share the second, so none of them orphans onto its own line. */
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.625rem;
   margin-top: 1.75rem;
   list-style: none;
+}
+
+.hero__actions li {
+  flex: 1 1 auto;
+}
+
+.hero__actions li:first-child {
+  flex-basis: 100%;
+}
+
+.hero__actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Hero spec sheet: the screener's key/value list beside the name */
+.spec {
+  display: grid;
+  align-self: end;
+  max-width: 28rem;
+  border-top: 1px solid var(--line-strong);
+}
+
+.spec__row {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  gap: 0.25rem 1rem;
+  padding-block: 0.625rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.spec__term {
+  color: var(--ink-muted);
+  line-height: 1.8;
+}
+
+.spec__value {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.status::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
 /* Buttons */
@@ -362,8 +437,8 @@ a:focus-visible {
   font-size: 0.8125rem;
 }
 
-/* Top-bar CV button: hidden on phones, where the hero CTA is one screen away.
-   Declared after .btn so this display value wins at equal specificity. */
+/* Top-bar CV button: hidden on phones, where the hero CTA is on the first
+   screen. Declared after .btn so this display value wins at equal specificity. */
 .topbar__cv {
   display: none;
 }
@@ -393,7 +468,10 @@ a:focus-visible {
   color: var(--ink-muted);
 }
 
-/* Section titles, numbered by a CSS counter ("01 — Summary") */
+/* Section titles, numbered by a CSS counter ("01 — Summary"). The second
+   content declaration gives the number empty alternative text, so screen
+   readers announce the heading alone; browsers without the "/" syntax keep
+   the first one. */
 .section__title {
   display: flex;
   align-items: baseline;
@@ -405,6 +483,7 @@ a:focus-visible {
 
 .section__title::before {
   content: counter(section, decimal-leading-zero) " —";
+  content: counter(section, decimal-leading-zero) " —" / "";
   flex: none;
   font-family: var(--font-body);
   font-size: 0.8125rem;
@@ -424,31 +503,32 @@ a:focus-visible {
   margin-top: 1.1em;
 }
 
-/* Timeline */
+/* Timeline: the rule and the dot are the item's pseudo-elements, both placed
+   in the "rule" grid area and centred in it. */
 .timeline {
   list-style: none;
 }
 
-.timeline__item {
-  position: relative;
-  padding-left: 1.75rem;
-  padding-bottom: 2.75rem;
-  margin-left: 0.4375rem;
-  border-left: 1px solid var(--line-strong);
-}
-
-.timeline__item:last-child {
-  padding-bottom: 0;
-  border-left-color: transparent;
+.timeline__item::before,
+.timeline__item::after {
+  content: "";
+  grid-area: rule;
+  justify-self: center;
 }
 
 .timeline__item::before {
-  content: "";
-  position: absolute;
-  top: 0.5rem;
-  left: -0.5rem;
+  width: 1px;
+  background: var(--line-strong);
+}
+
+.timeline__item:last-child::before {
+  display: none;
+}
+
+.timeline__item::after {
   width: 0.9375rem;
   height: 0.9375rem;
+  margin-top: 0.5rem;
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 4px var(--paper);
@@ -489,6 +569,10 @@ a:focus-visible {
 }
 
 /* Skills: grouped chips */
+.skills__group {
+  min-width: 0;
+}
+
 .skills__area {
   display: flex;
   align-items: center;
@@ -515,10 +599,17 @@ a:focus-visible {
 
 .chip {
   padding: 0.3rem 0.75rem;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: 999px;
   background: var(--paper-raised);
   font-size: 0.875rem;
+}
+
+/* The technologies the positioning rests on, marked in the HTML */
+.chip--lead {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 600;
 }
 
 /* Project cards */
@@ -551,11 +642,15 @@ a:focus-visible {
   color: var(--ink-muted);
 }
 
-/* Education & languages */
+/* Term/description rows: education, languages, beyond work */
 .details__term {
   margin-bottom: 0.25rem;
   line-height: 1.8;
   color: var(--accent);
+}
+
+.details .chips {
+  padding-top: 0.25rem;
 }
 
 /* Contact */
@@ -611,6 +706,11 @@ a:focus-visible {
   color: var(--ink-muted);
 }
 
+.footer__note {
+  flex-basis: 100%;
+  order: 1;
+}
+
 /* 6. Utilities ------------------------------------------------------------ */
 
 /* Small-caps label used for eyebrows, dates, card meta and term labels. */
@@ -632,18 +732,32 @@ a:focus-visible {
     display: inline-flex;
   }
 
+  .hero__actions li,
+  .hero__actions li:first-child {
+    flex: 0 0 auto;
+  }
+
+  .hero__actions .btn {
+    width: auto;
+  }
+
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .details__row {
     display: grid;
-    grid-template-columns: 9rem 1fr;
+    grid-template-columns: 11rem 1fr;
     gap: 1rem;
   }
 
   .details__term {
     margin-bottom: 0;
+  }
+
+  .footer__note {
+    flex-basis: auto;
+    order: 0;
   }
 }
 
@@ -657,16 +771,10 @@ a:focus-visible {
   }
 
   .hero__grid {
-    grid-template-columns: minmax(0, 1fr) minmax(16rem, 22rem);
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 24rem);
+    align-items: end;
     gap: 3rem;
-    padding-block: 4rem 4.5rem;
-  }
-
-  .hero__portrait {
-    order: 1;
-    width: 100%;
-    border-radius: 1.25rem 1.25rem 1.25rem 6rem;
+    padding-block: 4.5rem 5rem;
   }
 
   .facts__list {
@@ -675,17 +783,14 @@ a:focus-visible {
     padding-block: 1.75rem;
   }
 
-  /* Dates move into a right-aligned gutter left of the timeline rule. */
+  /* Dates move into a right-aligned column left of the rule. */
   .timeline__item {
-    margin-left: 11rem;
-    padding-left: 2.25rem;
+    grid-template-columns: 9.25rem 2.5rem minmax(0, 1fr);
+    grid-template-areas: "dates rule body";
   }
 
   .timeline__dates {
-    position: absolute;
-    top: 0.25rem;
-    left: -11rem;
-    width: 9.25rem;
+    padding-top: 0.25rem;
     text-align: right;
   }
 
@@ -712,5 +817,49 @@ a:focus-visible {
   .btn,
   .nav__link {
     transition: none;
+  }
+}
+
+/* 8. Print: a CV page should print as a plain document ------------------ */
+
+@media print {
+  :root {
+    --paper: #fff;
+    --paper-raised: #fff;
+    --paper-sunken: #fff;
+    --ink: #000;
+    --ink-muted: #333;
+    --shadow: none;
+  }
+
+  .topbar,
+  .skip,
+  .hero__actions,
+  .footer a {
+    display: none;
+  }
+
+  .section {
+    padding-block: 1.5rem;
+  }
+
+  .hero__grid {
+    padding-block: 1rem 2rem;
+  }
+
+  .timeline__item,
+  .skills__group,
+  .card {
+    break-inside: avoid;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .contact__links a[href^="http"]::after {
+    content: " — " attr(href);
+    color: var(--ink-muted);
   }
 }

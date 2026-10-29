@@ -21,6 +21,13 @@
       type="font/woff2"
       crossorigin
     />
+    <link
+      rel="preload"
+      href="assets/fonts/fraunces-latin-ext.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="assets/css/site.css" />
 
     <meta property="og:type" content="profile" />
@@ -30,7 +37,6 @@
       content="Backend Developer — PHP, Symfony, Ecommerce Platforms. 7 years of production ecommerce work. Kaunas, Lithuania."
     />
     <meta property="og:url" content="https://aleksiuno.github.io/" />
-    <meta property="og:image" content="https://aleksiuno.github.io/assets/img/darius-aleksiunas.jpg" />
     <meta property="profile:first_name" content="Darius" />
     <meta property="profile:last_name" content="Aleksiūnas" />
     <meta name="twitter:card" content="summary" />
@@ -43,7 +49,6 @@
         "jobTitle": "Backend Developer",
         "description": "Backend Developer — PHP, Symfony, Ecommerce Platforms",
         "url": "https://aleksiuno.github.io/",
-        "image": "https://aleksiuno.github.io/assets/img/darius-aleksiunas.jpg",
         "email": "mailto:aleksiuno@gmail.com",
         "address": {
           "@type": "PostalAddress",
@@ -54,7 +59,7 @@
           "@type": "CollegeOrUniversity",
           "name": "The Open University"
         },
-        "knowsAbout": ["PHP", "Symfony", "Doctrine ORM", "PrestaShop", "MySQL", "MongoDB", "Docker", "Go"],
+        "knowsAbout": ["PHP", "Symfony", "Doctrine ORM", "PrestaShop", "MySQL", "MongoDB", "Docker", "React", "Next.js", "Go"],
         "knowsLanguage": ["lt", "en", "ru"],
         "sameAs": [
           "https://lt.linkedin.com/in/darius-aleksiunas",
@@ -78,49 +83,63 @@
             <li><a class="nav__link" href="#contact">Contact</a></li>
           </ul>
         </nav>
-        <a class="btn btn--small topbar__cv" href="Darius-Aleksiunas-CV.pdf" download>CV (PDF)</a>
+        <a class="btn btn--small topbar__cv" href="CVDariusAleksiunas.pdf" download>CV (PDF)</a>
       </div>
     </header>
 
     <main id="main">
       <section class="hero" aria-labelledby="name">
         <div class="wrap hero__grid">
-          <figure class="hero__portrait">
-            <img
-              src="assets/img/darius-aleksiunas.jpg"
-              width="512"
-              height="512"
-              alt="Darius Aleksiūnas, arms crossed, in a black t-shirt"
-              fetchpriority="high"
-            />
-          </figure>
           <div class="hero__text">
-            <p class="hero__eyebrow kicker">Kaunas, Lithuania · remote or Kaunas on-site</p>
+            <p class="hero__eyebrow kicker">Kaunas, Lithuania</p>
             <h1 class="hero__name" id="name">Darius<br />Aleksiūnas</h1>
             <p class="hero__title">Backend Developer — PHP, Symfony, Ecommerce Platforms</p>
             <p class="hero__lede">
               7 years building, integrating and running production ecommerce platforms at Invertus,
-              now open to backend roles and expanding into Go.
+              now looking for a backend role and expanding into Go.
             </p>
             <ul class="hero__actions">
               <li>
-                <a class="btn btn--primary" href="Darius-Aleksiunas-CV.pdf" download>Download CV (PDF)</a>
+                <a class="btn btn--primary" href="CVDariusAleksiunas.pdf" download>Download CV (PDF)</a>
               </li>
               <li><a class="btn" href="https://github.com/aleksiuno">GitHub</a></li>
               <li><a class="btn" href="https://lt.linkedin.com/in/darius-aleksiunas">LinkedIn</a></li>
             </ul>
           </div>
+
+          <dl class="spec" aria-label="At a glance">
+            <div class="spec__row">
+              <dt class="spec__term kicker">Status</dt>
+              <dd class="spec__value"><span class="status">Open to backend roles</span></dd>
+            </div>
+            <div class="spec__row">
+              <dt class="spec__term kicker">Where</dt>
+              <dd class="spec__value">Remote anywhere, or hybrid/on-site in Kaunas</dd>
+            </div>
+            <div class="spec__row">
+              <dt class="spec__term kicker">Stack</dt>
+              <dd class="spec__value">PHP, Symfony, Doctrine, MySQL, Docker</dd>
+            </div>
+            <div class="spec__row">
+              <dt class="spec__term kicker">Platforms</dt>
+              <dd class="spec__value">PrestaShop, WooCommerce, Sylius</dd>
+            </div>
+            <div class="spec__row">
+              <dt class="spec__term kicker">Learning</dt>
+              <dd class="spec__value">Go, as a second backend language</dd>
+            </div>
+          </dl>
         </div>
       </section>
 
-      <section class="facts" aria-label="At a glance">
+      <section class="facts" aria-label="Key facts">
         <ul class="wrap facts__list">
           <li class="facts__item">
             <strong class="facts__value">7 years</strong>
             <span class="facts__label">commercial ecommerce experience, 2019–2026</span>
           </li>
           <li class="facts__item">
-            <strong class="facts__value">PHP 5.6 → 8.4</strong>
+            <strong class="facts__value">PHP 5.6–8.4</strong>
             <span class="facts__label">with Symfony, MySQL and PHPUnit</span>
           </li>
           <li class="facts__item">
@@ -128,8 +147,8 @@
             <span class="facts__label">official PrestaShop: Kustom, Klarna, Mollie</span>
           </li>
           <li class="facts__item">
-            <strong class="facts__value">Go</strong>
-            <span class="facts__label">as a second backend language</span>
+            <strong class="facts__value">4 platforms</strong>
+            <span class="facts__label">PrestaShop, WooCommerce, Sylius, custom B2B marketplace</span>
           </li>
         </ul>
       </section>
@@ -141,9 +160,10 @@
             Backend developer with 7 years of commercial ecommerce experience (2019–2026), all at a
             specialist ecommerce agency. Built and shipped complete online stores from the ground up —
             architecture, custom modules, ERP and payment integrations, data migration, deployment and
-            production maintenance — and owned client relationships end to end. Worked across
-            PrestaShop, WooCommerce, Sylius and a microservice-based B2B marketplace (Lumen, MongoDB,
-            Docker, React), on PHP 5.6 through 8.4 with Symfony, MySQL and PHPUnit.
+            production maintenance — and owned client relationships end to end, including remote,
+            English-first collaboration with a Scandinavian client. Worked across PrestaShop,
+            WooCommerce, Sylius and a microservice-based B2B marketplace (Lumen, MongoDB, Docker,
+            React), on PHP 5.6 through 8.4 with Symfony, MySQL and PHPUnit.
           </p>
           <p>
             Contributed to official PrestaShop payment modules for Kustom, Klarna and Mollie.
@@ -161,81 +181,88 @@
             <p class="timeline__dates kicker">
               <time datetime="2022-08">August 2022</time> – <time datetime="2026-05">May 2026</time>
             </p>
-            <h3 class="timeline__role">Developer</h3>
-            <p class="timeline__org">Invertus, Kaunas (ecommerce agency)</p>
-            <ul class="timeline__points">
-              <li>
-                Owned full-cycle delivery of new PrestaShop stores for clients replacing outdated
-                platforms (Fantasmagoria, Brasa): requirements with the client, architecture, custom
-                module development, data migration (customers, products, orders), go-live and
-                post-launch maintenance.
-              </li>
-              <li>
-                Built the Brasa integration with Microsoft Dynamics 365 Business Central (Navision) as
-                the system of record: two-way sync of products, stock, orders and customer data between
-                the ERP and the store.
-              </li>
-              <li>
-                Deployed and operated Brasa in production on Hostinger cloud with Cloudflare in front;
-                handled hosting, DNS, caching and ongoing maintenance.
-              </li>
-              <li>
-                Developed and maintained official PrestaShop payment integration modules: Kustom
-                (Klarna-style buy-now-pay-later), plus contributions to the Klarna and Mollie modules.
-              </li>
-              <li>
-                Backend developer on Stockfiller, a Scandinavian B2B marketplace connecting large
-                product suppliers with retailers, during its migration off PrestaShop to a microservice
-                architecture: Lumen (Laravel) services communicating over REST, MongoDB, Docker for dev
-                and production, with separate React front-offices per domain (customer management,
-                product management).
-              </li>
-              <li>
-                Migrated PrestaShop legacy core code to the Symfony/Doctrine layer using its CQRS
-                architecture (command and query buses, handlers, domain layer), with unit and
-                integration test coverage for the migrated code; delivered smaller client projects
-                including the Camelia Vaistinė pharmacy e-shop and the Kauno Grūdai questionnaire tool.
-              </li>
-              <li>
-                Built an agentic delivery pipeline with Claude Code and MCP: it monitored the client's
-                Trello board, implemented clear tasks with tests, ran browser-level checks against the
-                app in Docker, deployed to the dev environment and updated Trello, Jira and Tempo work
-                logs; unclear tasks became Jira questions for me to groom with the client. Replaced most
-                of the manual triage, bookkeeping and deployment steps in the client workflow.
-              </li>
-              <li>
-                Led delivery with junior developers on my projects, ran code reviews and gave internal
-                tech presentations.
-              </li>
-              <li>
-                Performed security audits of checkout and payment flows (payment-skimmer detection,
-                CORS/Cloudflare issues, SQL configuration, Apple Pay routing).
-              </li>
-            </ul>
+            <div class="timeline__body">
+              <h3 class="timeline__role">Developer</h3>
+              <p class="timeline__org">Invertus, Kaunas (ecommerce agency)</p>
+              <ul class="timeline__points">
+                <li>
+                  Owned full-cycle delivery of new PrestaShop stores for clients replacing outdated
+                  platforms (Fantasmagoria, Brasa): requirements with the client, architecture, custom
+                  module development, data migration (customers, products, orders), go-live and
+                  post-launch maintenance.
+                </li>
+                <li>
+                  Built the Brasa integration with Microsoft Dynamics 365 Business Central (Navision)
+                  as the system of record: two-way sync of products, stock, orders and customer data
+                  between the ERP and the store.
+                </li>
+                <li>
+                  Deployed and operated Brasa in production on Hostinger cloud with Cloudflare in
+                  front; handled hosting, DNS, caching and ongoing maintenance.
+                </li>
+                <li>
+                  Developed and maintained official PrestaShop payment integration modules: Kustom
+                  (Klarna-style buy-now-pay-later), plus contributions to the Klarna and Mollie
+                  modules.
+                </li>
+                <li>
+                  Backend developer on Stockfiller, a Scandinavian B2B marketplace connecting large
+                  product suppliers with retailers, during its migration off PrestaShop to a
+                  microservice architecture: Lumen (Laravel) services communicating over REST,
+                  MongoDB, Docker for dev and production, with separate React front-offices per domain
+                  (customer management, product management).
+                </li>
+                <li>
+                  Migrated PrestaShop legacy core code to the Symfony/Doctrine layer using its CQRS
+                  architecture (command and query buses, handlers, domain layer), with unit and
+                  integration test coverage for the migrated code; delivered smaller client projects
+                  including the Camelia Vaistinė pharmacy e-shop and the Kauno Grūdai questionnaire
+                  tool.
+                </li>
+                <li>
+                  Built an agentic delivery pipeline with Claude Code and MCP: it monitored the
+                  client's Trello board, implemented clear tasks with tests, ran browser-level checks
+                  against the app in Docker, deployed to the dev environment and updated Trello, Jira
+                  and Tempo work logs; unclear tasks became Jira questions for me to groom with the
+                  client. Replaced most of the manual triage, bookkeeping and deployment steps in the
+                  client workflow.
+                </li>
+                <li>
+                  Led delivery with junior developers on my projects, ran code reviews and gave
+                  internal tech presentations.
+                </li>
+                <li>
+                  Performed security audits of checkout and payment flows (payment-skimmer detection,
+                  CORS/Cloudflare issues, SQL configuration, Apple Pay routing).
+                </li>
+              </ul>
+            </div>
           </li>
 
           <li class="timeline__item">
             <p class="timeline__dates kicker">
               <time datetime="2019-03">March 2019</time> – <time datetime="2022-08">August 2022</time>
             </p>
-            <h3 class="timeline__role">Junior PHP Developer</h3>
-            <p class="timeline__org">Invertus, Kaunas</p>
-            <ul class="timeline__points">
-              <li>
-                Developed PrestaShop modules sold as Invertus products (e.g. smart upsell module) and
-                custom modules for client stores.
-              </li>
-              <li>
-                Communicated directly with clients and built integrations for them; staffed on client
-                projects at mid-level from early on.
-              </li>
-              <li>Contributed to large team projects such as the Camelia Vaistinė e-shop.</li>
-              <li>
-                Worked across PrestaShop 1.6 and 1.7, PHP 5.6–7.x, MySQL, JavaScript/jQuery; wrote
-                PHPUnit tests and took part in code reviews.
-              </li>
-              <li>Worked with WooCommerce and Sylius on client and internal projects.</li>
-            </ul>
+            <div class="timeline__body">
+              <h3 class="timeline__role">Junior PHP Developer</h3>
+              <p class="timeline__org">Invertus, Kaunas</p>
+              <ul class="timeline__points">
+                <li>
+                  Developed PrestaShop modules sold as Invertus products (e.g. smart upsell module) and
+                  custom modules for client stores.
+                </li>
+                <li>
+                  Communicated directly with clients and built integrations for them; staffed on
+                  client projects at mid-level from early on.
+                </li>
+                <li>Contributed to large team projects such as the Camelia Vaistinė e-shop.</li>
+                <li>
+                  Worked across PrestaShop 1.6 and 1.7, PHP 5.6–7.x, MySQL, JavaScript/jQuery; wrote
+                  PHPUnit tests and took part in code reviews.
+                </li>
+                <li>Worked with WooCommerce and Sylius on client and internal projects.</li>
+              </ul>
+            </div>
           </li>
         </ol>
       </section>
@@ -247,8 +274,8 @@
             <dt class="skills__area">Backend</dt>
             <dd>
               <ul class="chips">
-                <li class="chip">PHP 5.6–8.4</li>
-                <li class="chip">Symfony</li>
+                <li class="chip chip--lead">PHP 5.6–8.4</li>
+                <li class="chip chip--lead">Symfony</li>
                 <li class="chip">Doctrine ORM</li>
                 <li class="chip">Lumen/Laravel</li>
                 <li class="chip">OOP and design patterns</li>
@@ -263,7 +290,7 @@
             <dt class="skills__area">Ecommerce platforms</dt>
             <dd>
               <ul class="chips">
-                <li class="chip">PrestaShop 1.6–9 (modules, hooks, core migration to Symfony)</li>
+                <li class="chip chip--lead">PrestaShop 1.6–9 (modules, hooks, core migration to Symfony)</li>
                 <li class="chip">WooCommerce</li>
                 <li class="chip">Sylius</li>
                 <li class="chip">custom B2B marketplace</li>
@@ -274,7 +301,7 @@
             <dt class="skills__area">Integrations</dt>
             <dd>
               <ul class="chips">
-                <li class="chip">Payment gateways (Kustom, Klarna, Mollie)</li>
+                <li class="chip chip--lead">Payment gateways (Kustom, Klarna, Mollie)</li>
                 <li class="chip">Microsoft Dynamics 365 Business Central / Navision ERP</li>
                 <li class="chip">third-party APIs</li>
                 <li class="chip">data migrations</li>
@@ -285,7 +312,7 @@
             <dt class="skills__area">Data</dt>
             <dd>
               <ul class="chips">
-                <li class="chip">MySQL</li>
+                <li class="chip chip--lead">MySQL</li>
                 <li class="chip">MongoDB</li>
               </ul>
             </dd>
@@ -294,7 +321,7 @@
             <dt class="skills__area">DevOps</dt>
             <dd>
               <ul class="chips">
-                <li class="chip">Docker</li>
+                <li class="chip chip--lead">Docker</li>
                 <li class="chip">Git</li>
                 <li class="chip">CI/CD</li>
                 <li class="chip">Linux</li>
@@ -352,7 +379,7 @@
             <dt class="skills__area">Learning</dt>
             <dd>
               <ul class="chips">
-                <li class="chip">Go (side projects, actively learning)</li>
+                <li class="chip chip--lead">Go (side projects, actively learning)</li>
               </ul>
             </dd>
           </div>
@@ -366,9 +393,9 @@
             <h3 class="card__title"><a href="https://soltcoin.com">soltcoin.com</a></h3>
             <p class="card__meta kicker">Crypto education site</p>
             <p>
-              Crypto education site with a semi-automated AI content pipeline. Used as a personal test
-              bed for new tooling: Docker-based deployments, AI-assisted content generation, hosting and
-              automation experiments.
+              Crypto education site built with Next.js and a semi-automated AI content pipeline. Used
+              as a personal test bed for new tooling: Docker-based deployments, AI-assisted content
+              generation, hosting and automation experiments.
             </p>
           </li>
           <li class="card">
@@ -411,6 +438,31 @@
         </dl>
       </section>
 
+      <section class="section wrap" aria-labelledby="beyond">
+        <h2 class="section__title" id="beyond">Beyond work</h2>
+        <dl class="details">
+          <div class="details__row">
+            <dt class="details__term kicker">Away from the keyboard</dt>
+            <dd>
+              <ul class="chips" aria-label="Interests">
+                <li class="chip">Computer games</li>
+                <li class="chip">Board games</li>
+                <li class="chip">Cycling</li>
+                <li class="chip">Running</li>
+                <li class="chip">The gym</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="details__row">
+            <dt class="details__term kicker">Working style</dt>
+            <dd>
+              I like to own a problem end to end — from the first conversation with the client to
+              running the result in production — and I keep at a task until it works.
+            </dd>
+          </div>
+        </dl>
+      </section>
+
       <section class="section wrap" aria-labelledby="contact">
         <h2 class="section__title" id="contact">Contact</h2>
         <p class="contact__lede">
@@ -428,7 +480,7 @@
           </li>
           <li>
             <span class="contact__label kicker">CV</span>
-            <a href="Darius-Aleksiunas-CV.pdf" download>Darius-Aleksiunas-CV.pdf</a>
+            <a href="CVDariusAleksiunas.pdf" download>CVDariusAleksiunas.pdf</a>
           </li>
         </ul>
       </section>
@@ -437,6 +489,7 @@
     <footer class="footer">
       <div class="wrap footer__inner">
         <p>© 2026 Darius Aleksiūnas</p>
+        <p class="footer__note">Static HTML and CSS, no framework, no tracking.</p>
         <p><a href="https://github.com/aleksiuno/aleksiuno.github.io">Source on GitHub</a></p>
       </div>
     </footer>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Darius Aleksiūnas — CV</title>
+<style>
+@font-face { font-family: "Fraunces"; font-weight: 300 900; src: url("../assets/fonts/fraunces-latin.woff2") format("woff2"); }
+@font-face { font-family: "Fraunces"; font-weight: 300 900; src: url("../assets/fonts/fraunces-latin-ext.woff2") format("woff2"); unicode-range: U+0100-024F; }
+@page { size: A4; margin: 12mm 14mm 12mm 14mm; }
+:root { --ink:#1e1a16; --muted:#5f5850; --line:#d9d0c2; --accent:#b5400f; }
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: -apple-system, "Inter", "Helvetica Neue", Arial, sans-serif; font-size: 9.4pt; line-height: 1.34; color: var(--ink); }
+a { color: var(--ink); text-decoration: none; }
+h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 500; line-height: 1.1; letter-spacing: -0.01em; }
+h1 { font-size: 26pt; letter-spacing: -0.02em; }
+.head { display: flex; justify-content: space-between; align-items: flex-end; gap: 10mm; padding-bottom: 3.2mm; border-bottom: 1.5px solid var(--ink); }
+.title { font-family: "Fraunces", serif; font-style: italic; font-size: 12.5pt; margin-top: 1.5mm; }
+.contact { text-align: right; font-size: 8.6pt; color: var(--muted); line-height: 1.5; }
+.contact a { color: var(--muted); }
+.contact strong { color: var(--ink); font-weight: 600; }
+h2 { font-size: 13.5pt; margin: 4.4mm 0 2mm; break-after: avoid; padding-bottom: 1mm; border-bottom: 1px solid var(--line); display: flex; align-items: baseline; gap: 2.2mm; }
+h2::before { content: counter(sec, decimal-leading-zero) " —"; counter-increment: sec; font-family: inherit; font-family: -apple-system, "Inter", Arial, sans-serif; font-size: 7.2pt; font-weight: 600; letter-spacing: 0.08em; color: var(--accent); }
+body { counter-reset: sec; }
+p + p { margin-top: 1.6mm; }
+.role { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; margin-top: 2.6mm; break-after: avoid; }
+.role h3 { font-size: 11.6pt; }
+.role h3 span { font-family: inherit; font-style: italic; font-weight: 400; color: var(--muted); font-size: 10pt; }
+.dates { font-size: 7.6pt; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+ul { padding-left: 3.6mm; margin-top: 1.4mm; }
+li { margin-bottom: 0.8mm; padding-left: 0.6mm; break-inside: avoid; }
+li::marker { color: var(--accent); }
+.skills { display: grid; grid-template-columns: 28mm 1fr; column-gap: 3mm; row-gap: 1.2mm; }
+.skills dt { font-weight: 600; font-size: 9pt; }
+.skills dd { }
+.two { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; }
+.kv { display: grid; grid-template-columns: 22mm 1fr; column-gap: 3mm; row-gap: 1.2mm; }
+.kv dt { font-size: 7.4pt; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); padding-top: 0.5mm; }
+.proj li strong { font-weight: 600; }
+.pb { break-before: page; }
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div>
+    <h1>Darius Aleksiūnas</h1>
+    <p class="title">Backend Developer — PHP, Symfony, Ecommerce Platforms</p>
+  </div>
+  <div class="contact">
+    <strong>Kaunas, Lithuania</strong> · remote or Kaunas on-site<br>
+    +370 648 71141 · <a href="mailto:aleksiuno@gmail.com">aleksiuno@gmail.com</a><br>
+    <a href="https://lt.linkedin.com/in/darius-aleksiunas">linkedin.com/in/darius-aleksiunas</a> · <a href="https://github.com/aleksiuno">github.com/aleksiuno</a> · <a href="https://aleksiuno.github.io">aleksiuno.github.io</a>
+  </div>
+</header>
+
+<h2>Summary</h2>
+<p>Backend developer with 7 years of commercial ecommerce experience (2019–2026), all at a specialist ecommerce agency. Built and shipped complete online stores from the ground up — architecture, custom modules, ERP and payment integrations, data migration, deployment and production maintenance — and owned client relationships end to end, including remote, English-first collaboration with a Scandinavian client. Worked across PrestaShop, WooCommerce, Sylius and a microservice-based B2B marketplace (Lumen, MongoDB, Docker, React), on PHP 5.6 through 8.4 with Symfony, MySQL and PHPUnit.</p>
+<p>Contributed to official PrestaShop payment modules for Kustom, Klarna and Mollie. Comfortable leading delivery with junior developers, running code reviews, automating repetitive engineering work and handling security audits. Expanding into Go as a second backend language, building Go services alongside the PHP work.</p>
+
+<h2>Experience</h2>
+
+<div class="role">
+  <h3>Developer <span>— Invertus, Kaunas (ecommerce agency)</span></h3>
+  <span class="dates">Aug 2022 – May 2026</span>
+</div>
+<ul>
+  <li>Owned full-cycle delivery of new PrestaShop stores for clients replacing outdated platforms (Fantasmagoria, Brasa): requirements with the client, architecture, custom module development, data migration (customers, products, orders), go-live and post-launch maintenance.</li>
+  <li>Built the Brasa integration with Microsoft Dynamics 365 Business Central (Navision) as the system of record: syncing products, stock, orders and customer data between the ERP and the store.</li>
+  <li>Deployed and operated Brasa in production on Hostinger cloud with Cloudflare in front; handled hosting, DNS, caching and ongoing maintenance.</li>
+  <li>Developed and maintained official PrestaShop payment integration modules: Kustom (buy-now-pay-later), plus contributions to the Klarna and Mollie modules.</li>
+  <li>Backend developer on Stockfiller, a Scandinavian B2B marketplace connecting large product suppliers with retailers, during its migration off PrestaShop to a microservice architecture: Lumen (Laravel) services communicating over REST, MongoDB, Docker for dev and production, with separate React front-offices per domain (customer management, product management).</li>
+  <li>Migrated PrestaShop legacy core code to the Symfony/Doctrine layer using its CQRS architecture (command and query buses, handlers, domain layer), with unit and integration test coverage for the migrated code; delivered smaller client projects including the Camelia Vaistinė pharmacy e-shop and the Kauno Grūdai questionnaire tool.</li>
+  <li>Built an agentic delivery pipeline with Claude Code and MCP: it monitored the client's Trello board, implemented clear tasks with tests, ran browser-level checks against the app in Docker, deployed to the dev environment and updated Trello, Jira and Tempo work logs; unclear tasks became Jira questions for me to groom with the client. Replaced most of the manual triage, bookkeeping and deployment steps in the client workflow.</li>
+  <li>Led delivery with junior developers on my projects, ran code reviews and gave internal tech presentations.</li>
+  <li>Performed security audits of checkout and payment flows (payment-skimmer detection, CORS/Cloudflare issues, SQL configuration, Apple Pay routing).</li>
+</ul>
+
+<div class="role">
+  <h3>Junior PHP Developer <span>— Invertus, Kaunas</span></h3>
+  <span class="dates">Mar 2019 – Aug 2022</span>
+</div>
+<ul>
+  <li>Developed PrestaShop modules sold as Invertus products (e.g. smart upsell module) and custom modules for client stores.</li>
+  <li>Communicated directly with clients and built integrations for them; staffed on client projects at mid-level from early on.</li>
+  <li>Contributed to large team projects such as the Camelia Vaistinė e-shop.</li>
+  <li>Worked across PrestaShop 1.6 and 1.7, PHP 5.6–7.x, MySQL, JavaScript/jQuery; wrote PHPUnit tests and took part in code reviews.</li>
+  <li>Worked with WooCommerce and Sylius on client and internal projects.</li>
+</ul>
+
+<h2>Skills</h2>
+<dl class="skills">
+  <dt>Backend</dt><dd>PHP 5.6–8.4, Symfony, Doctrine ORM, Lumen/Laravel, OOP and design patterns, CQRS, REST APIs, microservice architecture, PHPUnit (unit and integration tests)</dd>
+  <dt>Ecommerce platforms</dt><dd>PrestaShop 1.6–9 (modules, hooks, core migration to Symfony), WooCommerce, Sylius, custom B2B marketplace</dd>
+  <dt>Integrations</dt><dd>Payment gateways (Kustom, Klarna, Mollie), Microsoft Dynamics 365 Business Central / Navision ERP, third-party APIs, data migrations</dd>
+  <dt>Data</dt><dd>MySQL, MongoDB</dd>
+  <dt>DevOps</dt><dd>Docker, Git, CI/CD, Linux, Hostinger cloud deployment, Cloudflare</dd>
+  <dt>Frontend</dt><dd>JavaScript, React, Next.js, HTML/CSS, Bootstrap, jQuery</dd>
+  <dt>Security</dt><dd>Security audits, payment-skimmer detection, CORS/CDN hardening</dd>
+  <dt>AI &amp; automation</dt><dd>Agentic development workflows (Claude Code, MCP), prompt engineering, automated delivery and content pipelines</dd>
+  <dt>Ways of working</dt><dd>Agile/Jira, code review, client communication and requirements gathering, mentoring juniors, estimations</dd>
+  <dt>Learning</dt><dd>Go (side projects, actively learning)</dd>
+</dl>
+
+<h2>Side projects</h2>
+<ul class="proj">
+  <li><strong>soltcoin.com</strong> — crypto education site built with Next.js and a semi-automated AI content pipeline. Used as a personal test bed for new tooling: Docker-based deployments, AI-assisted content generation, hosting and automation experiments.</li>
+  <li><strong>devtreasures.com</strong> (2024–2025, offline) — WooCommerce dropshipping store run under my own company (Mažoji Bendrija); set up the store, payments, product sourcing and ad campaigns, then closed it after a year when sales did not justify the costs.</li>
+  <li><strong>Go practice</strong> — building small backend services in Go as a second language alongside PHP, applying the service-boundary patterns from Stockfiller. Repos linked on GitHub as they are completed.</li>
+</ul>
+
+<h2>Education, languages &amp; interests</h2>
+<dl class="kv">
+  <dt>Education</dt><dd><strong>BSc (Hons) Computing and IT (Computer Science)</strong> — The Open University, UK, 2012–2018</dd>
+  <dt>Languages</dt><dd>Lithuanian (native) · English (C1, professional working proficiency) · Russian (basic)</dd>
+  <dt>Interests</dt><dd>Cycling, running and the gym; computer and board games.</dd>
+</dl>
+
+</body>
+</html>
