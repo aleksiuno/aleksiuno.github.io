@@ -56,7 +56,7 @@ li::marker { color: var(--accent); }
 
 <h2>Summary</h2>
 <p>Backend developer with 7 years of commercial ecommerce experience (2019–2026), all at a specialist ecommerce agency. Built and shipped complete online stores from the ground up — architecture, custom modules, ERP and payment integrations, data migration, deployment and production maintenance — and owned client relationships end to end, including remote, English-first collaboration with a Scandinavian client. Worked across PrestaShop, WooCommerce, Sylius and a microservice-based B2B marketplace (Lumen, MongoDB, Docker, React), on PHP 5.6 through 8.4 with Symfony, MySQL and PHPUnit.</p>
-<p>Contributed to official PrestaShop payment modules for Kustom, Klarna and Mollie. Comfortable leading delivery with junior developers, running code reviews, automating repetitive engineering work and handling security audits. Expanding into Go as a second backend language, building Go services alongside the PHP work.</p>
+<p>Contributed to official PrestaShop payment modules for Kustom, Klarna and Mollie. Comfortable leading delivery with junior developers, running code reviews, automating repetitive engineering work and handling security audits. Expanding into Go as a second backend language: see solpay-shop, a tested Go payments service, below.</p>
 
 <h2>Experience</h2>
 
@@ -69,9 +69,10 @@ li::marker { color: var(--accent); }
   <li>Built the Brasa integration with Microsoft Dynamics 365 Business Central (Navision) as the system of record: syncing products, stock, orders and customer data between the ERP and the store.</li>
   <li>Deployed and operated Brasa in production on Hostinger cloud with Cloudflare in front; handled hosting, DNS, caching and ongoing maintenance.</li>
   <li>Developed and maintained official PrestaShop payment integration modules: Kustom (buy-now-pay-later), plus contributions to the Klarna and Mollie modules.</li>
-  <li>Backend developer on Stockfiller, a Scandinavian B2B marketplace connecting large product suppliers with retailers, during its migration off PrestaShop to a microservice architecture: Lumen (Laravel) services communicating over REST, MongoDB, Docker for dev and production, with separate React front-offices per domain (customer management, product management).</li>
+  <li>Backend developer on Stockfiller, a Scandinavian B2B marketplace connecting large product suppliers with retailers, decomposing a PrestaShop monolith into services: Lumen (Laravel) services communicating over REST, MongoDB, Docker for dev and production, with separate React front-offices per domain (customer management, product management).</li>
   <li>Migrated PrestaShop legacy core code to the Symfony/Doctrine layer using its CQRS architecture (command and query buses, handlers, domain layer), with unit and integration test coverage for the migrated code; delivered smaller client projects including the Camelia Vaistinė pharmacy e-shop and the Kauno Grūdai questionnaire tool.</li>
   <li>Built an agentic delivery pipeline with Claude Code and MCP: it monitored the client's Trello board, implemented clear tasks with tests, ran browser-level checks against the app in Docker, deployed to the dev environment and updated Trello, Jira and Tempo work logs; unclear tasks became Jira questions for me to groom with the client. Replaced most of the manual triage, bookkeeping and deployment steps in the client workflow.</li>
+  <li>Supported A/B testing of Invertus's BradSearch module on my client stores: installation, debugging the cookie-based variant assignment and fixing the PrestaShop module; colleagues ran the experiments and analysis.</li>
   <li>Led delivery with junior developers on my projects, ran code reviews and gave internal tech presentations.</li>
   <li>Performed security audits of checkout and payment flows (payment-skimmer detection, CORS/Cloudflare issues, SQL configuration, Apple Pay routing).</li>
 </ul>
@@ -99,14 +100,14 @@ li::marker { color: var(--accent); }
   <dt>Security</dt><dd>Security audits, payment-skimmer detection, CORS/CDN hardening</dd>
   <dt>AI &amp; automation</dt><dd>Agentic development workflows (Claude Code, MCP), prompt engineering, automated delivery and content pipelines</dd>
   <dt>Ways of working</dt><dd>Agile/Jira, code review, client communication and requirements gathering, mentoring juniors, estimations</dd>
-  <dt>Learning</dt><dd>Go (side projects, actively learning)</dd>
+  <dt>Go</dt><dd>solpay-shop side project: net/http, pgx/sqlc, testcontainers, slog</dd>
 </dl>
 
 <h2>Side projects</h2>
 <ul class="proj">
+  <li><strong>solpay-shop</strong> (github.com/aleksiuno/solpay-shop) — Go service that sells digital downloads and accepts Solana devnet payments: explicit order state machine, idempotent payment ledger keyed by transaction signature, polling watcher with backoff and timeouts, HMAC-signed download links, structured event log viewable in an admin UI, Postgres integration tests with testcontainers, CI with race-enabled tests, govulncheck and a Docker build.</li>
   <li><strong>soltcoin.com</strong> — crypto education site built with Next.js and a semi-automated AI content pipeline. Used as a personal test bed for new tooling: Docker-based deployments, AI-assisted content generation, hosting and automation experiments.</li>
   <li><strong>devtreasures.com</strong> (2024–2025, offline) — WooCommerce dropshipping store run under my own company (Mažoji Bendrija); set up the store, payments, product sourcing and ad campaigns, then closed it after a year when sales did not justify the costs.</li>
-  <li><strong>Go practice</strong> — building small backend services in Go as a second language alongside PHP, applying the service-boundary patterns from Stockfiller. Repos linked on GitHub as they are completed.</li>
 </ul>
 
 <h2>Education, languages &amp; interests</h2>

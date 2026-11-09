@@ -6,7 +6,7 @@
     <title>Darius Aleksiūnas — Backend Developer (PHP, Symfony, Ecommerce)</title>
     <meta
       name="description"
-      content="Darius Aleksiūnas, backend developer in Kaunas, Lithuania. 7 years building and running production ecommerce platforms with PHP, Symfony, PrestaShop, ERP and payment integrations. Expanding into Go."
+      content="Darius Aleksiūnas, backend developer in Kaunas, Lithuania. 7 years building and running production ecommerce platforms with PHP, Symfony, PrestaShop, ERP and payment integrations. Expanding into Go: author of solpay-shop, a tested Go payments service."
     />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#f6f1e8" media="(prefers-color-scheme: light)" />
@@ -147,8 +147,8 @@
             <span class="facts__label">official PrestaShop: Kustom, Klarna, Mollie</span>
           </li>
           <li class="facts__item">
-            <strong class="facts__value">4 platforms</strong>
-            <span class="facts__label">PrestaShop, WooCommerce, Sylius, custom B2B marketplace</span>
+            <strong class="facts__value">Go</strong>
+            <span class="facts__label"><a href="https://github.com/aleksiuno/solpay-shop">solpay-shop</a>, a tested payments service</span>
           </li>
         </ul>
       </section>
@@ -169,7 +169,7 @@
             Contributed to official PrestaShop payment modules for Kustom, Klarna and Mollie.
             Comfortable leading delivery with junior developers, running code reviews, automating
             repetitive engineering work and handling security audits. Expanding into Go as a second
-            backend language, building Go services alongside the PHP work.
+            backend language: see solpay-shop, a tested Go payments service, below.
           </p>
         </div>
       </section>
@@ -207,8 +207,8 @@
                 </li>
                 <li>
                   Backend developer on Stockfiller, a Scandinavian B2B marketplace connecting large
-                  product suppliers with retailers, during its migration off PrestaShop to a
-                  microservice architecture: Lumen (Laravel) services communicating over REST,
+                  product suppliers with retailers, decomposing a PrestaShop monolith into
+                  services: Lumen (Laravel) services communicating over REST,
                   MongoDB, Docker for dev and production, with separate React front-offices per domain
                   (customer management, product management).
                 </li>
@@ -226,6 +226,9 @@
                   and Tempo work logs; unclear tasks became Jira questions for me to groom with the
                   client. Replaced most of the manual triage, bookkeeping and deployment steps in the
                   client workflow.
+                </li>
+                <li>
+                  Supported A/B testing of Invertus's BradSearch module on my client stores: installation, debugging the cookie-based variant assignment and fixing the PrestaShop module; colleagues ran the experiments and analysis.
                 </li>
                 <li>
                   Led delivery with junior developers on my projects, ran code reviews and gave
@@ -379,7 +382,7 @@
             <dt class="skills__area">Learning</dt>
             <dd>
               <ul class="chips">
-                <li class="chip chip--lead">Go (side projects, actively learning)</li>
+                <li class="chip chip--lead">Go (solpay-shop: net/http, pgx/sqlc, testcontainers, slog)</li>
               </ul>
             </dd>
           </div>
@@ -389,6 +392,13 @@
       <section class="section wrap" aria-labelledby="projects">
         <h2 class="section__title" id="projects">Side projects</h2>
         <ul class="cards">
+          <li class="card">
+            <h3 class="card__title"><a href="https://github.com/aleksiuno/solpay-shop">solpay-shop</a></h3>
+            <p class="card__meta kicker">Go · Solana devnet payments</p>
+            <p>
+              Go service that sells digital downloads and accepts Solana devnet payments: explicit order state machine, idempotent payment ledger keyed by transaction signature, polling watcher with backoff and timeouts, HMAC-signed download links, structured event log viewable in an admin UI, Postgres integration tests with testcontainers, CI with race-enabled tests, govulncheck and a Docker build.
+            </p>
+          </li>
           <li class="card">
             <h3 class="card__title"><a href="https://soltcoin.com">soltcoin.com</a></h3>
             <p class="card__meta kicker">Crypto education site</p>
@@ -405,15 +415,6 @@
               WooCommerce dropshipping store run under my own company (Mažoji Bendrija); set up the
               store, payments, product sourcing and ad campaigns, then closed it after a year when sales
               did not justify the costs.
-            </p>
-          </li>
-          <li class="card">
-            <h3 class="card__title">Go practice</h3>
-            <p class="card__meta kicker">Second backend language</p>
-            <p>
-              Building small backend services in Go as a second language alongside PHP, applying the
-              service-boundary patterns from Stockfiller. Repos linked on
-              <a href="https://github.com/aleksiuno">GitHub</a> as they are completed.
             </p>
           </li>
         </ul>
